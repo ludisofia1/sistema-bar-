@@ -1,34 +1,22 @@
-# Bar Club — Sistema de gestión para bares y restaurantes
+# Bar Club
 
-Aplicación full-stack para bares y restaurantes: pedidos online (retiro/delivery), reservas de mesa y panel de administración con caja, cocina y ventas en tiempo real.
+Sistema de gestión para bares y restaurantes. Permite hacer pedidos online (retiro o delivery), reservar mesa, y tiene un panel de administración para manejar caja, cocina y ventas.
 
-## 🔗 Demo en vivo (sin backend, no requiere login real)
+## Probalo
 
-- **Sitio público:** https://ludisofia1.github.io/sistema-bar-/demo/index-demo.html
-- **Panel admin:** https://ludisofia1.github.io/sistema-bar-/demo/panel-demo.html
-  - Usuarios de prueba (cualquier contraseña): `admin@demo.com`, `cajero@demo.com`, `cocina@demo.com`, `mozo@demo.com`
+No hace falta instalar nada, hay una versión demo con datos de ejemplo:
 
-> Estos son archivos autocontenidos con datos de ejemplo, pensados para que cualquiera pueda probar la app sin levantar el servidor real.
+- Sitio público: https://ludisofia1.github.io/sistema-bar-/demo/index-demo.html
+- Panel de administración: https://ludisofia1.github.io/sistema-bar-/demo/panel-demo.html (usuarios: admin@demo.com, cajero@demo.com, cocina@demo.com o mozo@demo.com, con cualquier contraseña)
 
-## Tecnologías
+## Cómo está hecho
 
-- **Frontend:** HTML, CSS y JavaScript puro (sin frameworks)
-- **Backend:** Java 21 + Spring Boot, Spring Security, JPA
-- **Base de datos:** MySQL
-- **Tiempo real:** WebSocket / STOMP para notificaciones en vivo (pedidos, reservas, ventas)
-- **Infraestructura:** Backend en Railway, frontend en Netlify, contenerizado con Docker
+Frontend en HTML, CSS y JavaScript plano, sin frameworks. Backend en Java 21 con Spring Boot, Spring Security y JPA, con MySQL como base de datos. Las notificaciones (pedidos nuevos, reservas, ventas) se actualizan en tiempo real con WebSocket. Backend desplegado en Railway y frontend en Netlify, con Docker.
 
-## Funcionalidades principales
+## Qué hace
 
-- Carta de productos con pedidos online (retiro o delivery)
-- Reservas de mesa con notificaciones en tiempo real
-- Panel de administración con roles (Admin, Cajero, Cocina, Mozo)
-- Gestión de caja (apertura/cierre, resumen por medio de pago)
-- Historial de ventas y movimientos por jornada
-- Sincronización en vivo entre múltiples dispositivos vía WebSocket
+Pedidos online con retiro o delivery, reservas de mesa con aviso en tiempo real, panel con distintos roles (admin, cajero, cocina, mozo), manejo de caja con apertura y cierre, historial de ventas por día, y sincronización entre varios dispositivos usando el mismo panel a la vez.
 
-## Estructura del proyecto
+## Estructura
 
-- `index.html` / `panel.html` — frontend real (conectado al backend)
-- `demo/` — versión de demostración autocontenida, sin backend
-- `src/`, `pom.xml`, `Dockerfile` — backend Spring Boot
+`index.html` y `panel.html` son el frontend real, conectado al backend. La carpeta `demo/` tiene una versión de esos mismos archivos pero sin depender de ningún servidor, solo para poder probar la app sin instalar nada. El resto (`src/`, `pom.xml`, `Dockerfile`) es el backend en Spring Boot.
